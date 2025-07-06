@@ -1,170 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quinoa Plus</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        
-        header {
-            background-color: #4a8f29;
-            color: white;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        
-        nav ul li {
-            margin-left: 2rem;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('quinoa-field.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 2rem;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .btn {
-            background-color: #4a8f29;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-        
-        .identify-section {
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .identify-section h2 {
-            color: #4a8f29;
-            margin-bottom: 1.5rem;
-        }
-        
-        .camera-btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: #4a8f29;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 2rem;
-        }
-        
-        footer {
-            background-color: #f5f5f5;
-            padding: 1rem;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                margin-top: 1rem;
-            }
-            
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quinoa Plus - Your Quinoa Resource</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
 </head>
 <body>
-    <header>
-        <div class="logo">Quinoa Plus</div>
-        <nav>
-            <ul>
-                <li><a href="#about">About Quinoa</a></li>
-                <li><a href="#benefits">Health Benefits</a></li>
-                <li><a href="#recipes">Recipes</a></li>
-                <li><a href="#identify">Identify</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+  <div class="container">
+    <h1>Quinoa Plus</h1>
+    <p>Your comprehensive resource for quinoa education, recipes, and farmer support</p>
+  </div>
+</header>
 
-    <section class="hero">
-        <h1>Discover the Power of Quinoa</h1>
-        <p>A complete protein source packed with nutrients for your healthy lifestyle.</p>
-        <a href="#about" class="btn">Learn More</a>
-    </section>
+<nav>
+  <div class="container">
+    <ul>
+      <li><a href="#about">About Quinoa</a></li>
+      <li><a href="#benefits">Health Benefits</a></li>
+      <li><a href="#recipes">Recipes</a></li>
+      <li><a href="#marketing">Products</a></li>
+      <li><a href="#identify">Identify</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <section id="identify" class="identify-section">
-        <h2>Identify Quinoa Plants</h2>
-        <div class="camera-btn" onclick="document.getElementById('fileInput').click()">
-            <i class="fas fa-camera"></i> Capture Plant Image
+<section class="hero">
+  <div class="container">
+    <h2>Discover the Power of Quinoa</h2>
+    <p>A complete protein source packed with nutrients for your healthy lifestyle.</p>
+    <a href="#about" class="btn">Learn More</a>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <img src="aboutquinoa.jpg" alt="About Quinoa" />
+  </div>
+</section>
+
+<section id="benefits" class="section">
+  <div class="container">
+    <h2>Health Benefits</h2>
+    <img src="assets/health.jpg" alt="Health Benefits"/>
+  </div>
+</section>
+
+<section id="recipes" class="section">
+  <div class="container">
+    <h2>Delicious Quinoa Recipes</h2>
+    <p class="section-description">Try these tasty quinoa recipes for breakfast, lunch, and dinner.</p>
+    <div class="recipes-grid">
+      <div class="recipe-card">
+        <img src="assets/quinoa-salad.jpg" alt="Quinoa Salad"/>
+        <h3>Mediterranean Quinoa Salad</h3>
+        <p>Fresh quinoa with cucumbers, tomatoes, olives, and feta cheese.</p>
+        <a href="#" class="btn-recipe">View Recipe</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/quinoa-bowl.jpeg" alt="Quinoa Bowl"/>
+        <h3>Quinoa Power Bowl</h3>
+        <p>Nutritious bowl with quinoa, avocado, sweet potatoes, and greens.</p>
+        <a href="#" class="btn-recipe">View Recipe</a>
+      </div>
+      <div class="recipe-card">
+        <img src="assets/quinoa-brekfast.jpg" alt="Quinoa Breakfast"/>
+        <h3>Quinoa Breakfast Porridge</h3>
+        <p>Warm quinoa with almond milk, berries, and honey.</p>
+        <a href="#" class="btn-recipe">View Recipe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="marketing" class="section">
+  <div class="container">
+    <h2>Premium Quinoa Products</h2>
+    <p class="section-description">Discover our high-quality quinoa products for your healthy lifestyle</p>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-badge">New</div>
+        <img src="assets/quinoa-choko.jpg" alt="Quinoa Choko" loading="lazy"/>
+        <div class="product-details">
+          <h3>Quinoa Flakes</h3>
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="review-count">(42 reviews)</span>
+          </div>
+          <p class="product-price">150 dz</p>
+          <button class="btn-add-to-cart">Add to Cart</button>
         </div>
-        <input type="file" id="fileInput" accept="image/*" capture="environment" style="display:none;">
-    </section>
+      </div>
+      <div class="product-card">
+        <img src="assets/quinoa-geldouche.jpg" alt="Quinoa Mix"/>
+        <h3>Quinoa Tri-Color Mix</h3>
+        <div class="product-rating">
+          <span class="stars">★★★★☆</span>
+          <span>(64 reviews)</span>
+        </div>
+        <p class="product-price">450 dz</p>
+        <button class="btn-add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <div class="product-badge">New</div>
+        <img src="assets/quinoa-flakes.jpg" alt="Quinoa Flakes"/>
+        <h3>Quinoa Flakes</h3>
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span>(42 reviews)</span>
+        </div>
+        <p class="product-price">250 dz</p>
+        <button class="btn-add-to-cart">Add to Cart</button>
+      </div>
+    </div>
 
-    <footer>
-        &copy; 2025 Quinoa Plus. All rights reserved.
-    </footer>
+    <div class="marketing-banner">
+      <div class="banner-content">
+        <h3>Special Offer!</h3>
+        <p>Get 20% off your first order with code: <strong>QUINOALOVE</strong></p>
+        <a href="#contact" class="btn">Order Now</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        document.getElementById('fileInput').addEventListener('change', function(e) {
-            if (e.target.files.length > 0) {
-                alert('Image captured! This would normally process the image for identification.');
-                // هنا يمكنك إضافة كود معالجة الصورة والتعرف على النبات
-            }
-        });
-    </script>
+<section id="identify" class="section">
+  <div class="container">
+    <h2>Identify Your Quinoa Plant</h2>
+    <p class="section-description">Take a picture or upload one to identify your quinoa plant:</p>
+    <input type="file" accept="image/*" capture="environment"/>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required/>
+      <input type="email" placeholder="Your Email" required/>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Quinoa Plus. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
