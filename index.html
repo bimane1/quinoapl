@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinoa Plus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #4a8f29;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('quinoa-field.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            background-color: #4a8f29;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        
+        .identify-section {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .identify-section h2 {
+            color: #4a8f29;
+            margin-bottom: 1.5rem;
+        }
+        
+        .camera-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #4a8f29;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+        
+        footer {
+            background-color: #f5f5f5;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Quinoa Plus</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Quinoa</a></li>
+                <li><a href="#benefits">Health Benefits</a></li>
+                <li><a href="#recipes">Recipes</a></li>
+                <li><a href="#identify">Identify</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Discover the Power of Quinoa</h1>
+        <p>A complete protein source packed with nutrients for your healthy lifestyle.</p>
+        <a href="#about" class="btn">Learn More</a>
+    </section>
+
+    <section id="identify" class="identify-section">
+        <h2>Identify Quinoa Plants</h2>
+        <div class="camera-btn" onclick="document.getElementById('fileInput').click()">
+            <i class="fas fa-camera"></i> Capture Plant Image
+        </div>
+        <input type="file" id="fileInput" accept="image/*" capture="environment" style="display:none;">
+    </section>
+
+    <footer>
+        &copy; 2025 Quinoa Plus. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                alert('Image captured! This would normally process the image for identification.');
+                // هنا يمكنك إضافة كود معالجة الصورة والتعرف على النبات
+            }
+        });
+    </script>
+</body>
+</html>
