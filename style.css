@@ -168,6 +168,19 @@ form button:hover {
     grid-template-columns: 1fr;
   }
 }
+/* Responsive image scaling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Optional: Add padding around sections */
+.section img {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 
 
 ✅ تم إرسال ملف CSS style.css بنجاح، وهو يتضمن:
