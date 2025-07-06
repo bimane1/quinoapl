@@ -1,61 +1,67 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const cameraBtn = document.getElementById('cameraBtn');
-    const fileInput = document.getElementById('fileInput');
-    const previewImage = document.getElementById('previewImage');
-    const resultContainer = document.getElementById('resultContainer');
-    const identificationResult = document.getElementById('identificationResult');
-    const retryBtn = document.getElementById('retryBtn');
-
-    // عند النقر على أيقونة الكاميرا
-    cameraBtn.addEventListener('click', function() {
-        fileInput.click();
-    });
-
-    // عند اختيار صورة
-    fileInput.addEventListener('change', function(e) {
-        if (e.target.files && e.target.files[0]) {
-            const reader = new FileReader();
-            
-            reader.onload = function(event) {
-                previewImage.src = event.target.result;
-                cameraBtn.style.display = 'none';
-                resultContainer.style.display = 'block';
-                
-                // هنا يمكنك إضافة كود للتعرف على النبات
-                identifyPlant(e.target.files[0]);
-            };
-            
-            reader.readAsDataURL(e.target.files[0]);
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
         }
     });
+});
 
-    // زر المحاولة مرة أخرى
-    retryBtn.addEventListener('click', function() {
-        cameraBtn.style.display = 'block';
-        resultContainer.style.display = 'none';
-        fileInput.value = '';
+// Form submission handler
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = this.elements[0].value;
+        const email = this.elements[1].value;
+        const message = this.elements[2].value;
+
+        console.log('Form submitted:', { name, email, message });
+        alert('Thank you for your message! We will get back to you soon.');
+        this.reset();
     });
+}
 
-    // دالة محاكاة للتعرف على النبات (يمكن استبدالها بوظيفة حقيقية)
-    function identifyPlant(imageFile) {
-        // هذه مجرد محاكاة - في التطبيق الحقيقي، يمكنك استخدام API للتعرف على النباتات
-        identificationResult.innerHTML = `
-            <h3>Quinoa Plant Identified</h3>
-            <p>Confidence: 92%</p>
-            <p>Characteristics:</p>
-            <ul>
-                <li>Scientific Name: Chenopodium quinoa</li>
-                <li>Family: Amaranthaceae</li>
-                <li>Edible Parts: Seeds and leaves</li>
-            </ul>
-            <p>This appears to be a healthy quinoa plant. The seeds are ready for harvest when they're firm and the leaves have started to yellow.</p>
-        `;
-        
-        // في التطبيق الحقيقي، يمكنك استخدام:
-        // fetch('API_ENDPOINT', { method: 'POST', body: formData })
-        // .then(response => response.json())
-        // .then(data => {
-        //     identificationResult.innerHTML = processIdentificationData(data);
-        // });
-    }
+// Add active class to current section in navigation
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 100)) {
+            current = section.getAttribute('id');
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Add to Cart Functionality
+document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+        const productCard = this.closest('.product-card');
+        const productName = productCard.querySelector('h3').textContent;
+        const productPrice = productCard.querySelector('.product-price')?.textContent || 'N/A';
+        console.log(`Added to cart: ${productName} - ${productPrice}`);
+
+        const originalText = this.textContent;
+        this.textContent = 'Added!';
+        this.style.backgroundColor = '#2ecc71';
+        setTimeout(() => {
+            this.textContent = originalText;
+            this.style.backgroundColor = '';
+        }, 2000);
+    });
 });
