@@ -12,6 +12,8 @@ if (imageInput && previewImage) {
         previewImage.style.display = 'block';
       };
       reader.readAsDataURL(file);
+    } else {
+      previewImage.style.display = 'none';
     }
   });
 }
@@ -43,16 +45,3 @@ cartButtons.forEach((btn) => {
     }, 2000);
   });
 });
-
-
-✅ تم إرسال ملف JavaScript كامل تحت اسم script.js، ويشمل:
-
-معاينة الصور المرفوعة في قسم "تعرف على نبتتك".
-
-إرسال نموذج الاتصال مع عرض رسالة تأكيد.
-
-تفاعل زر "Add to Cart" مع تأثير مؤقت.
-
-
-هل تريد أن أرسل الآن ملف index.html النهائي أيضًا؟
-
