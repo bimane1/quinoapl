@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
+  <!-- Header -->
   <header class="section">
     <div class="container">
       <h1>Quinoa Plus</h1>
@@ -15,6 +15,21 @@
     </div>
   </header>
 
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <div class="container">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#recipes">Recipes</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#identify">Identify</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sections -->
   <section id="about" class="section">
     <div class="container">
       <h2>About Quinoa</h2>
@@ -75,14 +90,13 @@
     </div>
   </section>
 
-  <!-- ✅ قسم التعريف بالنبتة (مُحدث) -->
   <section id="identify" class="section">
     <div class="container">
       <h2>Identify Your Quinoa Plant</h2>
       <div class="upload-section">
         <input type="file" accept="image/*" id="imageInput" />
         <div class="preview">
-          <img id="previewImage" src="identify.jpg" alt="Preview" />
+          <img id="previewImage" alt="Preview" style="display:none; max-width:100%; height:auto; margin-top:10px;" />
         </div>
       </div>
     </div>
@@ -99,6 +113,7 @@
       </form>
     </div>
   </section>
+
   <script src="script.js"></script>
 </body>
 </html>
