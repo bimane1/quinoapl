@@ -1,4 +1,4 @@
-// Preview uploaded image in identify section
+// معاينة صورة التحميل
 const imageInput = document.getElementById('imageInput');
 const previewImage = document.getElementById('previewImage');
 
@@ -12,13 +12,11 @@ if (imageInput && previewImage) {
         previewImage.style.display = 'block';
       };
       reader.readAsDataURL(file);
-    } else {
-      previewImage.style.display = 'none';
     }
   });
 }
 
-// Contact form submit handler
+// إرسال نموذج الاتصال
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function (e) {
@@ -32,10 +30,9 @@ if (contactForm) {
   });
 }
 
-// Add to Cart feedback
-const cartButtons = document.querySelectorAll('.btn-add-to-cart');
-cartButtons.forEach((btn) => {
-  btn.addEventListener('click', function () {
+// زر "Add to Cart"
+document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+  button.addEventListener('click', function () {
     const originalText = this.textContent;
     this.textContent = 'Added!';
     this.style.backgroundColor = '#2ecc71';
